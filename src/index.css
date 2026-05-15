@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #D4AF37;
+  --gold-dim: #C5A880;
+  --navy: #001F3F;
+  --surface-0: #0B0F19;
+  --surface-1: #111827;
+  --surface-2: #1F2937;
+  --surface-3: #263040;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--surface-0);
+  color: #E5E7EB;
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface-0); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+
+@layer base {
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+    font-style: normal;
+  }
+  .material-symbols-outlined.fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+@layer components {
+  .gold-border {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  }
+  .gold-border-strong {
+    border: 1px solid rgba(212, 175, 55, 0.6);
+  }
+  .surface-card {
+    background: var(--surface-2);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+  }
+  .surface-card:hover {
+    border-color: rgba(212, 175, 55, 0.35);
+  }
+  .text-gold { color: var(--gold); }
+  .text-gold-dim { color: var(--gold-dim); }
+  .bg-gold { background-color: var(--gold); }
+
+  /* Glassmorphic nav */
+  .glass-nav {
+    background: rgba(11, 15, 25, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  }
+
+  /* Gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #F5D87C 50%, #C5A880 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section label pill */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 16px;
+    border-radius: 100px;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  /* Input field dark */
+  .input-dark {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    color: #F9FAFB;
+    outline: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    transition: border-color 0.2s;
+  }
+  .input-dark::placeholder { color: rgba(255,255,255,0.3); }
+  .input-dark:focus { border-color: var(--gold); }
+
+  /* CTA primary button */
+  .btn-gold {
+    background: var(--gold);
+    color: #0B0F19;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-gold:hover {
+    background: #F5D87C;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(212,175,55,0.3);
+  }
+
+  /* WhatsApp button */
+  .btn-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+  }
+}
+
+/* Animate number counter */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Page transition */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
